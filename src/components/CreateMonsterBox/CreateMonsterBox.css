@@ -1,0 +1,43 @@
+#createMonsterBoxContainer {
+    background-color: #202020;
+    padding: 15px;
+    position: fixed;
+    color: #ffffff;
+}
+
+.closeMonsterBox {
+    background-color: #3cce6d;
+    border: none;
+    transition: 0.25s ease-in-out;
+    padding: 8px 10px;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 93%;
+    cursor: pointer;
+}
+
+.closeMonsterBox:hover {
+    background-color: #16b64c;
+    color: #ffffff;
+}
+
+#createMonsterBoxContainer label {
+    display: block;
+}
+
+#createMonsterBoxContainer input {
+    margin: 5px 0 0 0;
+    display: block;
+    padding: 7px;
+    background-color: #4d4d4d;
+    border: none;
+}
+
+#createMonsterBoxContainer table {
+    width: 100%;
+}
+
+#createMonsterBoxContainer td {
+    padding: 0 20px 0 0;
+}
