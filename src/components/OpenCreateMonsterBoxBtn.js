@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export const CreateMonsterBtn = (props) => (
+export const OpenCreateMonsterBoxBtn = (props) => (
     <div>
         <button className="appButton" onClick={() => props.setIsCreateMonsterBoxOpen(true)}>
             Add Monster

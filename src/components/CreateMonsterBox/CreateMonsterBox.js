@@ -10,32 +10,41 @@ import { InputACC } from './InputACC/InputACC';
 import { InputRES } from './InputRES/InputRES';
 
 export const CreateMonsterBox = (props) => {
+    const logCurrentStats = (event) => {
+        event.preventDefault();
+        console.log(props.innateStats.monsterInnateStats)
+    }
+
+    
     return (
         <div id="createMonsterBoxContainer">
             <div>
                 <button className="closeMonsterBox" onClick={() => props.setIsCreateMonsterBoxOpen(false)}>X</button>
             </div>
             <p>You can create a monster by manually typing in their stats</p>
-            <table>
-                <tbody>
-                    <tr>
-                        <InputSPD {...props}/>
-                        <InputHP/>
-                    </tr>
-                    <tr>
-                        <InputATK/>
-                        <InputDEF/>
-                    </tr>
-                    <tr>
-                        <InputCritRate/>
-                        <InputCritDmg/>
-                    </tr>
-                    <tr>
-                        <InputACC/>
-                        <InputRES/>
-                    </tr>
-                </tbody>
-            </table>
+            <form>
+                <table>
+                    <tbody>
+                        <tr>
+                            <InputSPD {...props}/>
+                            <InputHP {...props}/>
+                        </tr>
+                        <tr>
+                            <InputATK {...props}/>
+                            <InputDEF {...props}/>
+                        </tr>
+                        <tr>
+                            <InputCritRate {...props}/>
+                            <InputCritDmg {...props}/>
+                        </tr>
+                        <tr>
+                            <InputACC {...props}/>
+                            <InputRES {...props}/>
+                        </tr>
+                    </tbody>
+                </table>
+                <button onClick={logCurrentStats}>Log Current Stats</button>
+            </form>
         </div>
     )
 }

@@ -1,8 +1,7 @@
 import React, { useState }from 'react';
 import './App.css';
-import { CreateMonsterBtn } from './components/CreateMonsterBtn';
+import { OpenCreateMonsterBoxBtn } from './components/OpenCreateMonsterBoxBtn';
 import { CreateMonsterBox } from './components/CreateMonsterBox/CreateMonsterBox';
-import { InputSPD } from './components/CreateMonsterBox/InputSPD/InputSPD';
 
 
 function App() {
@@ -12,14 +11,13 @@ function App() {
       hp: null,
       atk: null,
       def: null,
-      spd: 123,
+      spd: null,
       critRate: null,
       critDmg: null,
       acc: null,
-      res: null
+      resistance: null
     }
   });
-
 
 
   return (
@@ -27,9 +25,13 @@ function App() {
       <div style={{ position: 'absolute', top: '10%', left: '30%'}}>
         {innateStats.monsterInnateStats.spd}
       </div>
-      <CreateMonsterBtn setIsCreateMonsterBoxOpen={setIsCreateMonsterBoxOpen} />
+      <OpenCreateMonsterBoxBtn setIsCreateMonsterBoxOpen={setIsCreateMonsterBoxOpen} />
       { isCreateMonsterBoxOpen ? 
-        (<CreateMonsterBox setIsCreateMonsterBoxOpen={setIsCreateMonsterBoxOpen} innateStats={innateStats} setInnateStats={setInnateStats}>
+        (<CreateMonsterBox 
+        setIsCreateMonsterBoxOpen={setIsCreateMonsterBoxOpen} 
+        innateStats={innateStats} 
+        setInnateStats={setInnateStats}
+        >
           </CreateMonsterBox>) : (null) }
     </div>
   );

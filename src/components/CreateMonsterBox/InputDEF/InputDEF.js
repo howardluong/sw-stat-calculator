@@ -1,8 +1,9 @@
 import React from 'react'
 
-export const InputDEF = () =>(
+export const InputDEF = (props) =>(
     <td>
-        <label for="def">DEF</label>
-        <input type="text" name="def"/>
+        <label htmlFor="def">DEF</label>
+        <input type="number" name="def" 
+        onChange={(event) => props.setInnateStats({ monsterInnateStats: {...props.innateStats.monsterInnateStats, def: event.target.value}})}/>
     </td>
 )
